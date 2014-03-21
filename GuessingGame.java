@@ -1,7 +1,9 @@
-
+package GuessingGame;
 
 import java.util.*;
-public class Guessingame {
+
+public class GuessGame {
+
 	public static void main(String[] args)
 	{
 		Scanner input=new Scanner(System.in);
@@ -11,33 +13,33 @@ public class Guessingame {
 		int lower=1;
 		int upper=100;
 		int sayac=0;
+		int secim=3;
 		tahmin=(lower+upper)/2;
-
-		for(;;)
-		{	tahmin=(lower+upper)/2;
-		System.out.printf("Guessing: %d (0:right guess 1:my number is lower 2:my number is higher) : ", tahmin);
-		int secim=input.nextInt();
-
-
-		if(secim==0)
-		{
-			System.out.println("BULUNDUU");
-			sayac++;
+		while(secim!= 0)
+		{	
+			tahmin=(lower+upper)/2;
+			System.out.printf("Guessing: %d (0:right guess 1:my number is lower 2:my number is higher) : ", tahmin);
+		    secim=input.nextInt();
+			if(secim==0)
+			{
+				System.out.println("BULUNDUU");
+				sayac++;
+				break;
+			}
+			else if(secim==1)
+			{
+				upper=tahmin;
+				sayac++;
+			}
+			else if(secim==2)
+			{
+				lower=tahmin;
+				sayac++;
+			}
 		}
-		else if(secim==1)
-		{
-			upper=tahmin;
-			sayac++;
-			//tahmin=(lower+upper)/2;
-		}
-		else if(secim==2)
-		{
-			lower=tahmin;
-			sayac++;
-			//tahmin=(lower+upper)/2;
-		}
-		}
-		
 	}
 
 }
+
+
+
